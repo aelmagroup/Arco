@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.architecture-commune.fr/</loc>
+    <lastmod>2026-06-18</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.architecture-commune.fr/projets.html?cat=architecture</loc>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.architecture-commune.fr/projets.html?cat=amo</loc>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.architecture-commune.fr/projets.html?cat=art</loc>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.architecture-commune.fr/projets.html?cat=sensibilisation</loc>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.architecture-commune.fr/apropos.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+</urlset>
