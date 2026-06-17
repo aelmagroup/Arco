@@ -3,419 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>À propos – Arco Architecture Commune</title>
+  <title>À propos – Architecture Commune</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="about">
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header is-light">
-    <a href="index.html" class="header-logo" aria-label="Arco – Accueil">
-      <svg viewBox="0 0 241.1 155.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="95.9" y="38.2" fill="none" width="72.7" height="69.3"/>
-        <text transform="matrix(1 0 0 1 95.9467 68.4739)" font-family="'CocogooseProTrial-Bold', 'Arial Black', sans-serif" font-size="36" fill="black" letter-spacing="-4"><tspan x="0" y="0">AR</tspan><tspan x="0" y="30" letter-spacing="-3">CO</tspan></text>
-        <line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="120.9" y1="39.9" x2="120.9" y2="69.9"/>
-        <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="130.3" cy="84.7" r="14.9"/>
-        <rect x="95.9" y="109.5" fill="none" width="49.2" height="18.2"/>
-        <text transform="matrix(1 0 0 1 96.7001 115.1082)" font-family="'Nexa-ExtraLight', 'Arial', sans-serif" font-size="8" fill="black" letter-spacing="0"><tspan x="0" y="0">Architecture  </tspan><tspan x="0.5" y="9.6" letter-spacing="1">Commune</tspan></text>
-      </svg>
-    </a>
-    <div class="header-right">
-      <nav class="header-nav" id="header-nav">
-        <a href="projets.html">Projets</a>
-        <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <div class="mobile-bar">
+    <a href="index.html" class="mobile-logo"><img src="media/logos/logo-arco.png" alt="Architecture Commune"></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="sidebar-backdrop"></div>
 
-  <!-- ========== MAIN ========== -->
-  <main class="page-wrap">
-    <div class="page-header">
-      <h1 class="page-title">À propos</h1>
-    </div>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
 
-    <div class="page-body">
+    <main class="content">
+      <section class="about">
 
-      <!-- TABS -->
-      <div class="about-nav" role="tablist" aria-label="Sections">
-        <button class="about-tab active" role="tab" aria-selected="true"  aria-controls="panel-bio"    id="tab-bio">Biographies</button>
-        <button class="about-tab"        role="tab" aria-selected="false" aria-controls="panel-prix"   id="tab-prix">Prix &amp; distinctions</button>
-        <button class="about-tab"        role="tab" aria-selected="false" aria-controls="panel-pub"    id="tab-pub">Publications</button>
-      </div>
-
-      <!-- ============================
-           PANEL : BIOGRAPHIES
-           ============================ -->
-      <div class="about-panel active" id="panel-bio" role="tabpanel" aria-labelledby="tab-bio">
-        <div class="bio-grid">
-
-          <!-- Fanny -->
-          <article class="bio-card">
-            <div class="bio-photo">
-              <div class="card-placeholder" style="height:100%;"></div>
-            </div>
-            <h2 class="bio-name">Fanny COMPERE</h2>
-            <p class="bio-role">Architecte</p>
-            <p class="bio-text">Biographie à compléter.</p>
-          </article>
-
-          <!-- José Luis Casanova -->
-          <article class="bio-card">
-            <div class="bio-photo">
-              <div class="card-placeholder" style="height:100%;"></div>
-            </div>
-            <h2 class="bio-name">José Luis CASANOVA</h2>
-            <p class="bio-role">Architecte</p>
-            <p class="bio-text">
-              Fort de plus de 20 ans d'expérience, José Luis Casanova a développé un parcours professionnel à la croisée de l'architecture, de l'art, de l'urbanisme et de la gestion culturelle. Ces domaines ont constitué pour lui des espaces d'exploration et de création continue, tant au Pérou qu'en France, où ses projets continuent de croître et d'évoluer.
-            </p>
-            <p class="bio-text" style="margin-top:0.75rem;">
-              José a mené ces projets en collaboration avec diverses institutions, associations, universités et clients privés, avec lesquels il a pu développer de multiples propositions.
-            </p>
-          </article>
-
-          <!-- Marion Verdiere -->
-          <article class="bio-card">
-            <div class="bio-photo">
-              <div class="card-placeholder" style="height:100%;"></div>
-            </div>
-            <h2 class="bio-name">Marion VERDIERE</h2>
-            <p class="bio-role">Architecte &amp; Urbaniste · Lauréate AJAP 2025</p>
-            <p class="bio-text">
-              Marion Verdiere est architecte et urbaniste, spécialisée depuis plus de quinze ans dans le développement adapté et inclusif des territoires. Elle travaille en France et à l'international, notamment au Pérou, en collaboration avec des institutions académiques, publiques et privées.
-            </p>
-            <p class="bio-text" style="margin-top:0.75rem;">
-              Elle développe une pratique fondée sur une collaboration étroite avec les habitants, les ONG, ainsi que les autorités locales et nationales, afin de concevoir des stratégies de développement architecturales et urbaines adaptées aux contextes locaux. Cette approche a été reconnue par sa nomination en tant que lauréate des AJAP 2025.
-            </p>
-          </article>
-
+        <!-- Logo + coordonnées -->
+        <div class="about-head">
+          <img class="about-logo" src="media/logos/logo-arco.png" alt="Architecture Commune">
+          <ul class="coords">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11h-5v-6H9v6H4Z"/></svg>
+              <span><strong>Architecture Commune</strong><br>SAS d'architecture inscrite à l'ordre sous le n° S26544</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5Zm1.5 1.5L12 12l7.5-5.5"/></svg>
+              <span><a href="mailto:arco@architecture-commune.fr">arco@architecture-commune.fr</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c4 0 7 3 7 7 0 5-7 13-7 13S5 14 5 9c0-4 3-7 7-7Zm0 4.5A2.5 2.5 0 1 0 12 11a2.5 2.5 0 0 0 0-4.5Z"/></svg>
+              <span>9 rue Henry Rosel — 14320 Feuguerolles-Bully</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3c-1 0-2 1-2 2 0 9 7 16 16 16 1 0 2-1 2-2v-3l-5-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-5H6Z"/></svg>
+              <span><a href="tel:+33971721476">09 71 72 14 76</a></span>
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <!-- ============================
-           PANEL : PRIX & DISTINCTIONS
-           ============================ -->
-      <div class="about-panel" id="panel-prix" role="tabpanel" aria-labelledby="tab-prix">
-        <ul class="awards-list">
+        <!-- Onglets -->
+        <div class="about-tabs" role="tablist">
+          <button class="about-tab active" role="tab" data-panel="equipe" id="tab-equipe">L'équipe</button>
+          <button class="about-tab" role="tab" data-panel="prix" id="tab-prix">Prix &amp; distinctions</button>
+          <button class="about-tab" role="tab" data-panel="publications" id="tab-publications">Publications</button>
+        </div>
 
-          <li class="award-item">
-            <div>
-              <h2 class="award-name">Europan 12 – Runner Up</h2>
-              <p class="award-sub">IBA Münsterland</p>
-              <p class="award-desc">
-                Concours sur la ville adaptable pour répondre aux problématiques relatives au tissu périurbain vieillissant proposées par la Regionale 2016 du Münsterland. Au sein de l'équipe BINGO! – p.150-151.
-              </p>
-            </div>
-            <a href="https://issuu.com/europan/docs/e12-results-catalogue_en" target="_blank" rel="noopener" class="external-link">Voir</a>
-          </li>
+        <!-- ÉQUIPE -->
+        <div class="about-panel active" id="equipe" role="tabpanel">
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-photo"><img src="media/equipe/fanny.png" alt="Fanny Compère"></div>
+              <h2 class="team-name">Fanny COMPÈRE</h2>
+              <p class="team-text">Architecte DPLG et forte d'une expérience technique de 14 ans acquise sur des chantiers variés, Fanny Compère a longtemps été en lien direct avec les maîtres d'ouvrage au travers de son activité en agence d'architecture. En tant que cadre salariée, elle a également mis ses compétences au service des collectivités du Calvados afin de les accompagner dans leurs réflexions d'aménagement du territoire et de les guider dans la rédaction des marchés publics correspondants. Aujourd'hui, elle poursuit cet engagement au sein d'Architecture Commune, en mettant son expertise architecturale, technique et opérationnelle au service de projets alliant qualité, faisabilité et développement territorial.</p>
+            </article>
 
-          <li class="award-item">
-            <div>
-              <h2 class="award-name">ONU-Habitat – Inspiring Practices</h2>
-              <p class="award-sub">Le logement au centre du nouvel agenda urbain</p>
-              <p class="award-desc">
-                Amélioration des conditions de vie dans une zone urbaine marginale des quartiers nord de Lima avec la participation des habitants.
-              </p>
-              <p class="award-partners">Avec Mano a Mano Perú</p>
-            </div>
-            <a href="https://www.uhph.org/en/contest/winners/improving-living-conditions-inhabitants-marginal-urban-area" target="_blank" rel="noopener" class="external-link">Voir</a>
-          </li>
+            <article class="team-card">
+              <div class="team-photo"><img src="media/equipe/marion.png" alt="Marion Verdière"></div>
+              <h2 class="team-name">Marion VERDIÈRE</h2>
+              <p class="team-text">Marion Verdière est architecte et urbaniste, spécialisée depuis plus de quinze ans dans le développement adapté et inclusif des territoires. Elle travaille en France et à l'international, notamment au Pérou, en collaboration avec des institutions académiques, publiques et privées. Elle développe une pratique fondée sur une collaboration étroite avec les habitants, les ONG, ainsi que les autorités locales et nationales, afin de concevoir des stratégies de développement architecturales et urbaines adaptées aux contextes locaux. Cette approche a été reconnue par sa nomination en tant que lauréate des AJAP 2025.</p>
+            </article>
 
-          <li class="award-item">
-            <div>
-              <h2 class="award-name">COP27 Gender Just Climate Solution Awards</h2>
-              <p class="award-sub">2022</p>
-              <p class="award-desc">
-                Un modèle d'urbanisation résilient qui transforme les rôles de genre à Lima. Dans le bidonville « La Ensenada de Chillon », des femmes formées comme maçonnes construisent des murs de terrassement pour développer une agriculture urbaine communautaire. 5 000 m² de jardins transforment des terrains vagues en espaces verts productifs, améliorant la sécurité alimentaire et la qualité de vie.
-              </p>
-              <p class="award-partners">Avec Mano a Mano · p.12</p>
-            </div>
-            <a href="https://womengenderclimate.org/wp-content/uploads/2022/11/WGC-brochure-FR_2022-11-03_web.pdf" target="_blank" rel="noopener" class="external-link">Voir</a>
-          </li>
+            <article class="team-card">
+              <div class="team-photo"><img src="media/equipe/jose.png" alt="José Luis Casanova"></div>
+              <h2 class="team-name">José Luis CASANOVA</h2>
+              <p class="team-text">Fort de plus de 20 ans d'expérience, José Luis Casanova a développé un parcours professionnel à la croisée de l'architecture, de l'art, de l'urbanisme et de la gestion culturelle. Ces domaines ont constitué pour lui des espaces d'exploration et de création continue, tant au Pérou qu'en France, où ses projets continuent de croître et d'évoluer. José a mené ces projets en collaboration avec diverses institutions, associations, universités et clients privés, avec lesquels il a pu développer de multiples propositions.</p>
+            </article>
+          </div>
 
-          <li class="award-item">
-            <div>
-              <h2 class="award-name">AJAP 2025</h2>
-              <p class="award-sub">Albums des Jeunes Architectes et Paysagistes – Ministère de la Culture</p>
-              <p class="award-desc">
-                « Un autre regard : éducation populaire et expériences architecturales »
-              </p>
-            </div>
-            <span class="external-link" style="cursor:default;opacity:0.4;">2025</span>
-          </li>
+          <div class="team-cv">
+            <a class="btn-download" href="media/CV-Architecture-Commune.pdf" target="_blank" rel="noopener">Télécharger les CV (PDF)</a>
+          </div>
+        </div>
 
-        </ul>
-      </div>
+        <!-- PRIX -->
+        <div class="about-panel" id="prix" role="tabpanel">
+          <ul class="awards-list">
+            <li class="award-item">
+              <div>
+                <span class="award-year">2025</span>
+                <h2 class="award-name">AJAP — Albums des Jeunes Architectes et Paysagistes</h2>
+                <p class="award-desc">« Un autre regard : éducation populaire et expériences architecturales ». Intégrer une pratique architecturale à un propos local, renforçant le lien social par le partage d'expériences concrètes. Décerné par le Ministère de la Culture.</p>
+              </div>
+              <a class="external-link" href="https://www.architectes.org/actualites/les-laureats-recompenses-par-les-ajap-2025-130200" target="_blank" rel="noopener">Voir</a>
+            </li>
+            <li class="award-item">
+              <div>
+                <span class="award-year">2022</span>
+                <h2 class="award-name">COP27 — Gender Just Climate Solution Awards</h2>
+                <p class="award-desc">Modèle d'urbanisation résilient qui transforme les rôles de genre à Lima (p. 12).</p>
+                <p class="award-partners">Avec Mano a Mano Perú</p>
+              </div>
+              <a class="external-link" href="https://womengenderclimate.org/wp-content/uploads/2022/11/WGC-brochure-FR_2022-11-03_web.pdf" target="_blank" rel="noopener">Voir</a>
+            </li>
+            <li class="award-item">
+              <div>
+                <span class="award-year">2018</span>
+                <h2 class="award-name">ONU-Habitat — Inspiring Practices Competition</h2>
+                <p class="award-desc">Amélioration des conditions de vie dans une zone urbaine marginale du nord de Lima avec la participation des habitants.</p>
+                <p class="award-partners">Avec Mano a Mano Perú</p>
+              </div>
+              <a class="external-link" href="https://www.uhph.org/en/contest/winners/improving-living-conditions-inhabitants-marginal-urban-area" target="_blank" rel="noopener">Voir</a>
+            </li>
+            <li class="award-item">
+              <div>
+                <span class="award-year">2014</span>
+                <h2 class="award-name">Europan 12 — Runner Up</h2>
+                <p class="award-desc">IBA Münsterland — répondre aux problématiques relatives au tissu périurbain vieillissant (Regionale 2016). Au sein de l'équipe BINGO! (p. 150-151).</p>
+              </div>
+              <a class="external-link" href="https://issuu.com/europan/docs/e12-results-catalogue_en" target="_blank" rel="noopener">Voir</a>
+            </li>
+          </ul>
+        </div>
 
-      <!-- ============================
-           PANEL : PUBLICATIONS
-           ============================ -->
-      <div class="about-panel" id="panel-pub" role="tabpanel" aria-labelledby="tab-pub">
-        <ul class="pub-list">
+        <!-- PUBLICATIONS -->
+        <div class="about-panel" id="publications" role="tabpanel">
+          <ul class="pub-list">
+            <li class="pub-item"><span class="pub-year">2026</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">Bricoler l'espace public : un dialogue constructif comme solution urbaine locale</p></div><span class="pub-link pub-link--none">À paraître</span></li>
+            <li class="pub-item"><span class="pub-year">2026</span><span class="pub-type">Article</span><div class="pub-content"><p class="pub-title">Quelle place pour l'architecte dans l'évolution des territoires autogérés du rural à l'urbain ? (en cours de publication)</p></div><span class="pub-link pub-link--none">À paraître</span></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2022</span>
-            <span class="pub-type">Article</span>
-            <div class="pub-content">
-              <p class="pub-title">Gobernanza energética y de la vivienda popular en Lima Metropolitana – Desafíos y perspectivas de la situación ambiental en el Perú</p>
-              <p class="pub-authors">Miranda-Sara L., Valdivia-Sisniegas R., Verdiere M.</p>
-            </div>
-            <a href="https://repositorio.pucp.edu.pe/items/52081ef8-9322-43b2-aabb-9de1d587e6f7" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+            <li class="pub-item"><span class="pub-year">2025</span><span class="pub-type">Article / Data</span><div class="pub-content"><p class="pub-title">Development of Household Personas using Vignettes for Urban Building Energy Modelling of low-income housing in informal settlements in the Global South</p><p class="pub-authors">Oraiopoulos A., Fennell P., Tomei J., Lambert R., Ruyssevelt P., Verdiere M., et al.</p></div><a class="pub-link" href="https://rdr.ucl.ac.uk/articles/dataset/Development_of_Household_Personas_using_Vignettes_for_Urban_Building_Energy_Modelling_of_low-income_housing_in_informal_settlements_in_the_Global_South/22469458/1" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2025</span><span class="pub-type">Article / Data</span><div class="pub-content"><p class="pub-title">Orthophotomosaics of low-income housing in informal settlements in the Global South</p><p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p></div><a class="pub-link" href="https://rdr.ucl.ac.uk/articles/figure/Orthophotomosaics_of_low-income_housing_in_informal_settlements_in_the_Global_South/29247509/1" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2025</span><span class="pub-type">Article / Data</span><div class="pub-content"><p class="pub-title">3D reality models of low-income communities in informal settlements in the Global South</p><p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p></div><a class="pub-link" href="https://rdr.ucl.ac.uk/articles/dataset/3D_reality_models_of_low-income_communities_in_informal_settlements_in_the_Global_South/29294333/1" target="_blank" rel="noopener">Lien</a></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2023</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">Nouvelles écologies urbaines dans les territoires auto-construits de Lima, Pérou</p>
-            </div>
-            <a href="https://ensa-normandie.fr/wp-content/uploads/2023/03/230317-cqafe-abstracts-def.pdf" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+            <li class="pub-item"><span class="pub-year">2024</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">« Autogestion et croissance urbaine » — Vers la possibilité d'un développement territorial inclusif ?</p></div><a class="pub-link" href="https://www.youtube.com/watch?v=R2J9vW4Fnn0" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2024</span><span class="pub-type">Article</span><div class="pub-content"><p class="pub-title">Grounded Energy Modelling for Equitable Urban Planning Development in the Global South: Internal Temperatures, Lima, Peru, 2021-2023</p><p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p></div><a class="pub-link" href="https://reshare.ukdataservice.ac.uk/857127/" target="_blank" rel="noopener">Lien</a></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2023</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">Quelle place pour l'architecte dans l'évolution des territoires autogérés du rural à l'urbain ?</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
+            <li class="pub-item"><span class="pub-year">2023</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">Nouvelles écologies urbaines dans les territoires auto-construits de Lima, Pérou</p></div><a class="pub-link" href="https://ensa-normandie.fr/wp-content/uploads/2023/03/230317-cqafe-abstracts-def.pdf" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2023</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">Quelle place pour l'architecte dans l'évolution des territoires autogérés du rural à l'urbain ?</p></div><span class="pub-link pub-link--none">—</span></li>
+            <li class="pub-item"><span class="pub-year">2023</span><span class="pub-type">Vidéo</span><div class="pub-content"><p class="pub-title">Ciudad Resiliente — Association Mano a Mano Perú</p><p class="pub-authors">Dunayevich A., Verdiere M., Pineda M.F., Dumans S.</p></div><a class="pub-link" href="https://www.youtube.com/watch?v=Y0oyjdjKwtE&t=6s" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2023</span><span class="pub-type">Rapport</span><div class="pub-content"><p class="pub-title">Vivienda digna y justicia energética: Diez mensajes desde los barrios populares</p><p class="pub-authors">Lambert R., Escalante Estrada C., de los Rios S., Verdiere M., Wieser M. (Projet GEMdev)</p></div><a class="pub-link" href="https://gemdev.net/wp-content/uploads/2024/01/Ten_Lessons_Spanish.pdf" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2023</span><span class="pub-type">Vidéo</span><div class="pub-content"><p class="pub-title">Hacia una Lima con justicia energética y vivienda digna</p><p class="pub-authors">Lambert R., Wieser M., Verdiere M., Escalante C., de Los Rios S., de Laurentiis M.</p></div><a class="pub-link" href="https://www.youtube.com/watch?v=JVqMqIuYx88" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2023</span><span class="pub-type">Article</span><div class="pub-content"><p class="pub-title">The impact of built environment on thermal comfort in informal settlements — The case of José Carlos Mariátegui, Lima, Perú</p><p class="pub-authors">Wieser M., Verdiere M., Fennell P.</p></div><a class="pub-link" href="https://discovery.ucl.ac.uk/id/eprint/10166639/" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2023</span><span class="pub-type">Article / Conf.</span><div class="pub-content"><p class="pub-title">Reducing extreme discomfort in the global South — Comparison of a calibrated model and locally measured data from informal housing in Peru (CATE 2023)</p><p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p></div><a class="pub-link" href="https://www.researchgate.net/publication/377576745" target="_blank" rel="noopener">Lien</a></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2023</span>
-            <span class="pub-type">Article</span>
-            <div class="pub-content">
-              <p class="pub-title">The impact of built environment on thermal comfort in informal settlements – The case of José Carlos Mariátegui, Lima, Perú</p>
-              <p class="pub-authors">Wieser M., Verdiere M., Fenell P.</p>
-            </div>
-            <a href="https://discovery.ucl.ac.uk/id/eprint/10166639/" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+            <li class="pub-item"><span class="pub-year">2022</span><span class="pub-type">Article</span><div class="pub-content"><p class="pub-title">Gobernanza energética y de la vivienda popular en Lima Metropolitana — Desafíos y perspectivas de la situación ambiental en el Perú</p><p class="pub-authors">Miranda-Sara L., Valdivia-Sisniegas R., Verdiere M.</p></div><a class="pub-link" href="https://repositorio.pucp.edu.pe/items/52081ef8-9322-43b2-aabb-9de1d587e6f7" target="_blank" rel="noopener">Lien</a></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2023</span>
-            <span class="pub-type">Rapport</span>
-            <div class="pub-content">
-              <p class="pub-title">Vivienda digna y justicia energética: Diez mensajes desde los barrios populares</p>
-              <p class="pub-authors">Lambert R., Escalante Estrada C., de los Rios S., Verdiere M., Wieser M. (Projet GEMdev)</p>
-            </div>
-            <a href="https://gemdev.net/wp-content/uploads/2024/01/Ten_Lessons_Spanish.pdf" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+            <li class="pub-item"><span class="pub-year">2018</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">« Foro Internacional de Intervenciones Urbanas III — Mujeres líderes y gestión local del territorio »</p></div><span class="pub-link pub-link--none">—</span></li>
+            <li class="pub-item"><span class="pub-year">2018</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">Impacto social en las intervenciones urbanas, proyecto ganador del concurso internacional UHPH</p><p class="pub-authors">Université Alas Peruanas, Lima (Mano a Mano Perú)</p></div><span class="pub-link pub-link--none">—</span></li>
+            <li class="pub-item"><span class="pub-year">2018</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">UHPH III — Foro Latinoamericano y del Caribe de Vivienda y Hábitat</p><p class="pub-authors">République Dominicaine (Mano a Mano Perú)</p></div><span class="pub-link pub-link--none">—</span></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2023</span>
-            <span class="pub-type">Vidéo</span>
-            <div class="pub-content">
-              <p class="pub-title">Ciudad Resiliente – Association Mano a Mano Perú</p>
-              <p class="pub-authors">Dunayevich A., Verdiere M., Pineda M.F., Dumans S.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=Y0oyjdjKwtE" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+            <li class="pub-item"><span class="pub-year">2017</span><span class="pub-type">Publication</span><div class="pub-content"><p class="pub-title">Maison des arts Mondignéras</p></div><a class="pub-link" href="https://drive.google.com/file/d/1ZgUoGBhDZ5eVp5NW4N8bZm1eNtICvbgE/view" target="_blank" rel="noopener">Lien</a></li>
+            <li class="pub-item"><span class="pub-year">2017</span><span class="pub-type">Conférence</span><div class="pub-content"><p class="pub-title">« Projet, Communication et Articulation »</p><p class="pub-authors">ENSAPBx, Post Master Rebuilding the World, Talence</p></div><span class="pub-link pub-link--none">—</span></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2023</span>
-            <span class="pub-type">Vidéo</span>
-            <div class="pub-content">
-              <p class="pub-title">Hacia una Lima con justicia energética y vivienda digna</p>
-              <p class="pub-authors">Lambert R., Wieser M., Verdiere M., Escalante C., de Los Rios S., de Laurentiis M.</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=JVqMqIuYx88" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+            <li class="pub-item"><span class="pub-year">2016</span><span class="pub-type">Article</span><div class="pub-content"><p class="pub-title">Proyecto en unidad vecinal Mirones — Comunicación y articulación</p><p class="pub-authors">Revue Arkinka, Lima, Pérou (association Homogeneos)</p></div><span class="pub-link pub-link--none">—</span></li>
 
-          <li class="pub-item">
-            <span class="pub-year">2023</span>
-            <span class="pub-type">Article / Conf.</span>
-            <div class="pub-content">
-              <p class="pub-title">Reducing extreme discomfort in the global South – Comparison of a calibrated model and locally measured data from informal housing in Peru (CATE 2023)</p>
-              <p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p>
-            </div>
-            <a href="https://www.researchgate.net/publication/377576745" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+            <li class="pub-item"><span class="pub-year">2015</span><span class="pub-type">Vidéo</span><div class="pub-content"><p class="pub-title">Homogeneos</p></div><span class="pub-link pub-link--none">—</span></li>
+            <li class="pub-item"><span class="pub-year">2015</span><span class="pub-type">Publication</span><div class="pub-content"><p class="pub-title">Cartas al Alcalde</p></div><span class="pub-link pub-link--none">—</span></li>
+          </ul>
+        </div>
 
-          <li class="pub-item">
-            <span class="pub-year">2024</span>
-            <span class="pub-type">Article</span>
-            <div class="pub-content">
-              <p class="pub-title">Grounded Energy Modelling for Equitable Urban Planning Development in the Global South: Internal Temperatures, Lima, Peru, 2021–2023</p>
-              <p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p>
-            </div>
-            <a href="https://reshare.ukdataservice.ac.uk/857127/" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
+      </section>
+      <footer class="content-footer"><span>© 2026 Architecture Commune — Arco</span></footer>
+    </main>
+  </div>
 
-          <li class="pub-item">
-            <span class="pub-year">2024</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">« Autogestion et croissance urbaine » – Vers la possibilité d'un développement territorial inclusif ?</p>
-            </div>
-            <a href="https://www.youtube.com/watch?v=R2J9vW4Fnn0" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2015</span>
-            <span class="pub-type">Vidéo</span>
-            <div class="pub-content">
-              <p class="pub-title">Homogeneos</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2015</span>
-            <span class="pub-type">Publication</span>
-            <div class="pub-content">
-              <p class="pub-title">Cartas al Alcalde</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2016</span>
-            <span class="pub-type">Article</span>
-            <div class="pub-content">
-              <p class="pub-title">Proyecto en unidad vecinal Mirones – Comunicación y articulación</p>
-              <p class="pub-authors">Revue Arkinka, Lima, Pérou (association Homogeneos)</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2017</span>
-            <span class="pub-type">Publication</span>
-            <div class="pub-content">
-              <p class="pub-title">Maison des arts Mondignéras</p>
-            </div>
-            <a href="https://drive.google.com/file/d/1ZgUoGBhDZ5eVp5NW4N8bZm1eNtICvbgE/view" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2017</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">« Projet, Communication et Articulation »</p>
-              <p class="pub-authors">ENSAPBx, Post Master Rebuilding the World, Talence</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2018</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">Impacto social en las intervenciones urbanas, proyecto ganador del concurso internacional UHPH</p>
-              <p class="pub-authors">Université Alas Peruanas, Lima (Mano a Mano Perú)</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2018</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">UHPH III – Foro Latinoamericano y del Caribe de Vivienda y Hábitat</p>
-              <p class="pub-authors">République Dominicaine (Mano a Mano Perú)</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2018</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">« Foro Internacional de Intervenciones Urbanas III, Mujeres líderes y gestión local del territorio »</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">–</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2025</span>
-            <span class="pub-type">Article / Data</span>
-            <div class="pub-content">
-              <p class="pub-title">Development of Household Personas using Vignettes for Urban Building Energy Modelling of low-income housing in informal settlements in the Global South</p>
-              <p class="pub-authors">Oraiopoulos A., Fennell P., Tomei J., Lambert R., Ruyssevelt P., Verdiere M., et al.</p>
-            </div>
-            <a href="https://rdr.ucl.ac.uk/articles/dataset/Development_of_Household_Personas_using_Vignettes_for_Urban_Building_Energy_Modelling_of_low-income_housing_in_informal_settlements_in_the_Global_South/22469458/1" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2025</span>
-            <span class="pub-type">Article / Data</span>
-            <div class="pub-content">
-              <p class="pub-title">Orthophotomosaics of low-income housing in informal settlements in the Global South</p>
-              <p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p>
-            </div>
-            <a href="https://rdr.ucl.ac.uk/articles/figure/Orthophotomosaics_of_low-income_housing_in_informal_settlements_in_the_Global_South/29247509/1" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2025</span>
-            <span class="pub-type">Article / Data</span>
-            <div class="pub-content">
-              <p class="pub-title">3D reality models of low-income communities in informal settlements in the Global South</p>
-              <p class="pub-authors">Oraiopoulos A., Wieser M., Verdiere M., Fennell P., Ruyssevelt P.</p>
-            </div>
-            <a href="https://rdr.ucl.ac.uk/articles/dataset/3D_reality_models_of_low-income_communities_in_informal_settlements_in_the_Global_South/29294333/1" target="_blank" rel="noopener" class="pub-link">Lien</a>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2026</span>
-            <span class="pub-type">Article</span>
-            <div class="pub-content">
-              <p class="pub-title">Quelle place pour l'architecte dans l'évolution des territoires autogérés du rural à l'urbain ? (en cours de publication)</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">À paraître</span>
-          </li>
-
-          <li class="pub-item">
-            <span class="pub-year">2026</span>
-            <span class="pub-type">Conférence</span>
-            <div class="pub-content">
-              <p class="pub-title">Bricoler l'espace public : Un dialogue constructif comme solution urbaine locale</p>
-            </div>
-            <span class="pub-link" style="opacity:0.4;">À paraître</span>
-          </li>
-
-        </ul>
-      </div>
-
-    </div><!-- /page-body -->
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <span class="footer-copy">© 2025 Arco – Architecture Commune</span>
-    <nav class="footer-nav">
-      <a href="projets.html">Projets</a>
-      <a href="apropos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </footer>
-
+  <script src="js/data.js"></script>
   <script src="js/nav.js"></script>
   <script>
-    // Tab switching
-    const tabs = document.querySelectorAll('.about-tab');
-    const panels = document.querySelectorAll('.about-panel');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-        panels.forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        document.getElementById(tab.getAttribute('aria-controls')).classList.add('active');
-      });
-    });
-
-    // Open tab from URL hash
-    const hash = window.location.hash;
-    if (hash) {
-      const target = document.querySelector(`[aria-controls="${hash.slice(1)}"]`);
-      if (target) target.click();
-    }
+    (function () {
+      const tabs = [...document.querySelectorAll('.about-tab')];
+      const panels = [...document.querySelectorAll('.about-panel')];
+      function show(id) {
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.panel === id));
+        panels.forEach(p => p.classList.toggle('active', p.id === id));
+      }
+      tabs.forEach(t => t.addEventListener('click', () => {
+        show(t.dataset.panel);
+        history.replaceState(null, '', '#' + t.dataset.panel);
+      }));
+      const h = location.hash.slice(1);
+      if (h && document.getElementById(h)) show(h);
+    })();
   </script>
 </body>
 </html>

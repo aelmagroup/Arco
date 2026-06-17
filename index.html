@@ -3,81 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arco – Architecture Commune</title>
-  <meta name="description" content="Arco est une agence d'architecture qui propose d'accompagner les privés et les publics à tous les niveaux du projet.">
+  <title>Architecture Commune – Arco</title>
+  <meta name="description" content="Architecture Commune (Arco), agence d'architecture née en Normandie : architecture, AMO, art & espaces publics et sensibilisation. Lauréate AJAP 2025.">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home">
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header is-light">
-    <a href="index.html" class="header-logo" aria-label="Arco – Accueil">
-      <svg viewBox="0 0 241.1 155.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="95.9" y="38.2" fill="none" width="72.7" height="69.3"/>
-        <text transform="matrix(1 0 0 1 95.9467 68.4739)" font-family="'CocogooseProTrial-Bold', 'Arial Black', sans-serif" font-size="36" fill="black" letter-spacing="-4"><tspan x="0" y="0">AR</tspan><tspan x="0" y="30" letter-spacing="-3">CO</tspan></text>
-        <line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="120.9" y1="39.9" x2="120.9" y2="69.9"/>
-        <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="130.3" cy="84.7" r="14.9"/>
-        <rect x="95.9" y="109.5" fill="none" width="49.2" height="18.2"/>
-        <text transform="matrix(1 0 0 1 96.7001 115.1082)" font-family="'Nexa-ExtraLight', 'Arial', sans-serif" font-size="8" fill="black" letter-spacing="0"><tspan x="0" y="0">Architecture  </tspan><tspan x="0.5" y="9.6" letter-spacing="1">Commune</tspan></text>
-      </svg>
-    </a>
-    <div class="header-right">
-      <nav class="header-nav" id="header-nav">
-        <a href="projets.html">Projets</a>
-        <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <!-- Barre mobile -->
+  <div class="mobile-bar">
+    <a href="index.html" class="mobile-logo"><img src="media/logos/logo-arco.png" alt="Architecture Commune"></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="sidebar-backdrop"></div>
 
-  <!-- ========== PAGE PRINCIPALE ========== -->
-  <main>
-    <section class="home-intro">
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"><!-- injecté par nav.js --></aside>
 
-      <!-- Colonne gauche : logo + bouton -->
-      <div class="home-intro-logo">
-        <svg viewBox="0 0 241.1 155.8" xmlns="http://www.w3.org/2000/svg" aria-label="Arco Architecture Commune">
-          <rect x="95.9" y="38.2" fill="none" width="72.7" height="69.3"/>
-          <text transform="matrix(1 0 0 1 95.9467 68.4739)" font-family="'CocogooseProTrial-Bold', 'Arial Black', sans-serif" font-size="36" fill="black" letter-spacing="-4"><tspan x="0" y="0">AR</tspan><tspan x="0" y="30" letter-spacing="-3">CO</tspan></text>
-          <line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="120.9" y1="39.9" x2="120.9" y2="69.9"/>
-          <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="130.3" cy="84.7" r="14.9"/>
-          <rect x="95.9" y="109.5" fill="none" width="49.2" height="18.2"/>
-          <text transform="matrix(1 0 0 1 96.7001 115.1082)" font-family="'Nexa-ExtraLight', 'Arial', sans-serif" font-size="8" fill="black" letter-spacing="0"><tspan x="0" y="0">Architecture  </tspan><tspan x="0.5" y="9.6" letter-spacing="1">Commune</tspan></text>
-        </svg>
-      </div>
+    <main class="content">
+      <section class="home">
+        <div class="home-logo">
+          <img src="media/logos/logo-arco.png" alt="Architecture Commune – Arco">
+        </div>
 
-      <!-- Colonne droite : texte -->
-      <div class="home-intro-text">
-        <p class="home-intro-label">Agence d'architecture – Lauréate AJAP 2025 – Ministère de la Culture</p>
-        <p class="home-intro-body">
-          Arco accompagne maîtres d'ouvrage publics et privés à chaque étape de leur projet — de la définition du programme à la livraison de l'ouvrage. En tant qu'AMO, nous aidons à clarifier les besoins, affiner le budget et piloter les démarches administratives jusqu'au suivi de chantier.
-        </p>
-        <p class="home-intro-body">
-          Au-delà de la maîtrise d'œuvre, Arco est un espace de dialogue et de réflexion collective. Convaincus que la culture, l'art et l'architecture forgent le lien social, nous concevons des projets qui rassemblent et améliorent le cadre de vie de tous.
-        </p>
-        <nav class="home-nav-links">
-          <a href="projets.html">Projets</a>
-          <a href="apropos.html">À propos</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
+        <div class="home-text">
+          <p class="home-p">
+            Architecture Commune est une nouvelle agence d'architecture née de l'association
+            d'<a href="apropos.html#equipe" class="inline-link">architectes expérimentés</a> tant à l'international que sur le territoire normand,
+            qui opèrent dans le champ de l'architecture, de l'urbanisme, de l'art et de la sensibilisation tout public.
+          </p>
+          <p class="home-p">
+            Architecture Commune, ou Arco, propose de vous accompagner — particuliers, collectivités ou entreprises privées —
+            à tous les niveaux du projet : de la réflexion autour du programme adapté et d'un budget calculé pour des projets
+            de construction, d'extension ou de rénovation, jusqu'au suivi de chantier et son achèvement, mais aussi en offrant
+            un accompagnement pour la rédaction des marchés de maîtrise d'œuvre, en tant qu'Assistant à la Maîtrise d'Ouvrage (AMO)
+            pour les collectivités.
+          </p>
+          <p class="home-p">
+            Architecture Commune s'attache au quotidien à créer un espace de réflexion pour échanger en amont du projet et devenir
+            un lieu d'échange et d'intégration pour tous, pour le développement des lieux communs. La culture, l'art et l'architecture
+            sont pour nous des outils pour échanger autour de ce qui nous rassemble et améliorer le bien vivre ensemble.
+          </p>
+        </div>
 
-    </section>
-  </main>
+        <a class="home-ajap" href="apropos.html#prix" aria-label="Lauréate AJAP 2025 – Ministère de la Culture">
+          <img src="media/logos/logo-ajap.jpg" alt="Lauréate AJAP 2025 – Ministère de la Culture">
+          <span>Lauréate AJAP 2025 — Ministère de la Culture</span>
+        </a>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <span class="footer-copy">© 2025 Arco – Architecture Commune</span>
-    <nav class="footer-nav">
-      <a href="projets.html">Projets</a>
-      <a href="apropos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </footer>
+        <div class="home-cats">
+          <a class="home-cat" href="projets.html?cat=architecture">
+            <span class="home-cat-img"><img src="media/accueil/architecture.jpg" alt="" loading="lazy"></span>
+            <span class="home-cat-label">Architecture</span>
+          </a>
+          <a class="home-cat" href="projets.html?cat=amo">
+            <span class="home-cat-img"><img src="media/accueil/amo.jpg" alt="" loading="lazy"></span>
+            <span class="home-cat-label">AMO</span>
+          </a>
+          <a class="home-cat" href="projets.html?cat=art">
+            <span class="home-cat-img"><img src="media/accueil/art.png" alt="" loading="lazy"></span>
+            <span class="home-cat-label">Art &amp; Espaces publics</span>
+          </a>
+          <a class="home-cat" href="projets.html?cat=sensibilisation">
+            <span class="home-cat-img"><img src="media/accueil/sensibilisation.jpg" alt="" loading="lazy"></span>
+            <span class="home-cat-label">Sensibilisation</span>
+          </a>
+        </div>
 
+        <footer class="content-footer">
+          <span>© 2026 Architecture Commune — Arco</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
   <script src="js/nav.js"></script>
 </body>
 </html>

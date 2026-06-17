@@ -3,120 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets – Arco Architecture Commune</title>
+  <title>Projets – Architecture Commune</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="category">
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header is-light">
-    <a href="index.html" class="header-logo" aria-label="Arco – Accueil">
-      <svg viewBox="0 0 241.1 155.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="95.9" y="38.2" fill="none" width="72.7" height="69.3"/>
-        <text transform="matrix(1 0 0 1 95.9467 68.4739)" font-family="'CocogooseProTrial-Bold', 'Arial Black', sans-serif" font-size="36" fill="black" letter-spacing="-4"><tspan x="0" y="0">AR</tspan><tspan x="0" y="30" letter-spacing="-3">CO</tspan></text>
-        <line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="120.9" y1="39.9" x2="120.9" y2="69.9"/>
-        <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="130.3" cy="84.7" r="14.9"/>
-        <rect x="95.9" y="109.5" fill="none" width="49.2" height="18.2"/>
-        <text transform="matrix(1 0 0 1 96.7001 115.1082)" font-family="'Nexa-ExtraLight', 'Arial', sans-serif" font-size="8" fill="black" letter-spacing="0"><tspan x="0" y="0">Architecture  </tspan><tspan x="0.5" y="9.6" letter-spacing="1">Commune</tspan></text>
-      </svg>
-    </a>
-    <div class="header-right">
-      <nav class="header-nav" id="header-nav">
-        <a href="projets.html">Projets</a>
-        <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <div class="mobile-bar">
+    <a href="index.html" class="mobile-logo"><img src="media/logos/logo-arco.png" alt="Architecture Commune"></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="sidebar-backdrop"></div>
 
-  <!-- ========== MAIN ========== -->
-  <main class="page-wrap">
-    <div class="page-header">
-      <h1 class="page-title">Projets</h1>
-    </div>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
 
-    <div class="page-body">
-      <!-- Filters -->
-      <div class="filter-bar" role="group" aria-label="Filtrer par catégorie">
-        <button class="filter-btn active" data-filter="all">Tous</button>
-        <button class="filter-btn" data-filter="amo">
-          <span class="cat-dot cat-dot--amo"></span> AMO
-        </button>
-        <button class="filter-btn" data-filter="sensibilisation">
-          <span class="cat-dot cat-dot--sensi"></span> Sensibilisation
-        </button>
-        <button class="filter-btn" data-filter="architecture">
-          <span class="cat-dot cat-dot--archi"></span> Architecture
-        </button>
-        <button class="filter-btn" data-filter="urbanisme">
-          <span class="cat-dot cat-dot--urba"></span> Urbanisme culturel
-        </button>
-      </div>
-
-      <!-- Grid -->
-      <div class="project-grid" id="project-grid"></div>
-    </div>
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <span class="footer-copy">© 2025 Arco – Architecture Commune</span>
-    <nav class="footer-nav">
-      <a href="projets.html">Projets</a>
-      <a href="apropos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </footer>
+    <main class="content">
+      <section class="cat-page" id="cat-page"></section>
+      <footer class="content-footer"><span>© 2026 Architecture Commune — Arco</span></footer>
+    </main>
+  </div>
 
   <script src="js/data.js"></script>
   <script src="js/nav.js"></script>
   <script>
-    const grid = document.getElementById('project-grid');
+    (function () {
+      const params = new URLSearchParams(location.search);
+      let cat = params.get('cat');
+      if (!cat || !CATEGORIES[cat]) cat = CATEGORY_ORDER[0];
 
-    function catClass(cat) {
-      const map = { amo: 'amo', sensibilisation: 'sensi', architecture: 'archi', urbanisme: 'urba' };
-      return map[cat] || '';
-    }
+      const c = CATEGORIES[cat];
+      const list = getProjectsByCategory(cat);
+      document.title = c.label + ' – Architecture Commune';
 
-    function catLabel(cat) {
-      return CATEGORIES[cat] ? CATEGORIES[cat].label : cat;
-    }
-
-    function renderProjects(filterCat) {
-      const filtered = filterCat === 'all' ? projects : projects.filter(p => p.category === filterCat);
-      grid.innerHTML = filtered.map(p => {
-        const cc = catClass(p.category);
-        const imgHtml = p.images && p.images.length > 0
+      const cards = list.map(p => {
+        const cover = p.images && p.images.length
           ? `<img src="${encodeURI(p.images[0])}" alt="${p.title}" loading="lazy">`
           : `<div class="card-placeholder"></div>`;
-        const yearHtml = p.year ? `<span class="card-year">${p.year}</span>` : '';
-        const locHtml = p.location ? `<span class="card-location">${p.location}</span>` : '';
         return `
-          <a href="projet.html?id=${p.id}" class="project-card" data-cat="${p.category}" aria-label="${p.title}${p.location ? ' – ' + p.location : ''}">
-            <div class="card-img">${imgHtml}</div>
-            <div class="card-meta">
-              <span class="badge badge--${cc}">${catLabel(p.category)}</span>
-              <span class="card-title">${p.title}</span>
-              ${locHtml}
-              ${yearHtml}
+          <a href="projet.html?id=${p.id}" class="cat-card">
+            <div class="cat-card-img">${cover}</div>
+            <div class="cat-card-meta">
+              <span class="cat-card-num">${p.num}</span>
+              <span class="cat-card-title">${p.title}</span>
+              ${p.location ? `<span class="cat-card-loc">${p.location}</span>` : ''}
+              ${p.year ? `<span class="cat-card-year">${p.year}</span>` : ''}
             </div>
           </a>`;
       }).join('');
-    }
 
-    // Filter buttons
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderProjects(btn.dataset.filter);
-      });
-    });
-
-    renderProjects('all');
+      document.getElementById('cat-page').innerHTML = `
+        <header class="cat-head">
+          <h1 class="cat-title cat-title--${c.cssClass}">${c.label}</h1>
+          <p class="cat-desc-mobile">${c.description}</p>
+        </header>
+        <div class="cat-list">${cards}</div>`;
+    })();
   </script>
 </body>
 </html>

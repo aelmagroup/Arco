@@ -3,162 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet – Arco Architecture Commune</title>
+  <title>Projet – Architecture Commune</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="project">
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header is-light">
-    <a href="index.html" class="header-logo" aria-label="Arco – Accueil">
-      <svg viewBox="0 0 241.1 155.8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="95.9" y="38.2" fill="none" width="72.7" height="69.3"/>
-        <text transform="matrix(1 0 0 1 95.9467 68.4739)" font-family="'CocogooseProTrial-Bold', 'Arial Black', sans-serif" font-size="36" fill="black" letter-spacing="-4"><tspan x="0" y="0">AR</tspan><tspan x="0" y="30" letter-spacing="-3">CO</tspan></text>
-        <line fill="none" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" x1="120.9" y1="39.9" x2="120.9" y2="69.9"/>
-        <circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="130.3" cy="84.7" r="14.9"/>
-        <rect x="95.9" y="109.5" fill="none" width="49.2" height="18.2"/>
-        <text transform="matrix(1 0 0 1 96.7001 115.1082)" font-family="'Nexa-ExtraLight', 'Arial', sans-serif" font-size="8" fill="black" letter-spacing="0"><tspan x="0" y="0">Architecture  </tspan><tspan x="0.5" y="9.6" letter-spacing="1">Commune</tspan></text>
-      </svg>
-    </a>
-    <div class="header-right">
-      <nav class="header-nav" id="header-nav">
-        <a href="projets.html">Projets</a>
-        <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <div class="mobile-bar">
+    <a href="index.html" class="mobile-logo"><img src="media/logos/logo-arco.png" alt="Architecture Commune"></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="sidebar-backdrop"></div>
 
-  <!-- ========== MAIN ========== -->
-  <main class="page-wrap" id="project-content">
-    <!-- Content injected by JS -->
-    <div style="display:flex;align-items:center;justify-content:center;height:60vh;color:#9a9a9a;font-size:0.875rem;">
-      Chargement…
-    </div>
-  </main>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <span class="footer-copy">© 2025 Arco – Architecture Commune</span>
-    <nav class="footer-nav">
-      <a href="projets.html">Projets</a>
-      <a href="apropos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </footer>
+    <main class="content">
+      <section class="detail" id="detail">
+        <div class="detail-loading">Chargement…</div>
+      </section>
+      <footer class="content-footer"><span>© 2026 Architecture Commune — Arco</span></footer>
+    </main>
+  </div>
 
   <script src="js/data.js"></script>
   <script src="js/nav.js"></script>
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const project = id ? getProject(id) : null;
-    const main = document.getElementById('project-content');
+    (function () {
+      const id = new URLSearchParams(location.search).get('id');
+      const p = id ? getProject(id) : null;
+      const root = document.getElementById('detail');
 
-    function catClass(cat) {
-      const map = { amo: 'amo', sensibilisation: 'sensi', architecture: 'archi', urbanisme: 'urba' };
-      return map[cat] || '';
-    }
+      if (!p) {
+        root.innerHTML = `<a href="index.html" class="back-link">Accueil</a><p class="detail-loading">Projet introuvable.</p>`;
+        return;
+      }
 
-    function buildPlaceholders(n) {
-      return Array(n).fill('<div class="card-placeholder" style="width:100%;height:100%;"></div>');
-    }
+      const c = CATEGORIES[p.category];
+      document.title = p.title + ' – Architecture Commune';
+      const imgs = (p.images || []).slice(0, 5);
 
-    if (!project) {
-      main.innerHTML = `
-        <div class="page-header">
-          <a href="projets.html" class="back-link">Retour aux projets</a>
-          <p style="color:#9a9a9a;">Projet introuvable.</p>
-        </div>`;
-    } else {
-      document.title = `${project.title} – Arco`;
-      const cc = catClass(project.category);
-      const catLabel = CATEGORIES[project.category] ? CATEGORIES[project.category].label : '';
+      const mainInner = imgs.length
+        ? `<img src="${encodeURI(imgs[0])}" alt="${p.title}" id="gmain">
+           ${imgs.length > 1 ? `<button class="g-prev" aria-label="Précédent">&#8592;</button><button class="g-next" aria-label="Suivant">&#8594;</button>` : ''}`
+        : `<div class="card-placeholder" style="position:absolute;inset:0;"></div>`;
 
-      // Build image gallery (real or placeholders)
-      const imgs = project.images && project.images.length > 0 ? project.images : [];
-      const totalSlides = imgs.length > 0 ? Math.min(imgs.length, 5) : 5;
-      let mainSrc = imgs.length > 0 ? encodeURI(imgs[0]) : null;
+      const thumbs = imgs.length > 1 ? imgs.map((src, i) =>
+        `<button class="g-thumb ${i === 0 ? 'active' : ''}" data-i="${i}"><img src="${encodeURI(src)}" alt="Vue ${i + 1}"></button>`
+      ).join('') : '';
 
-      const thumbsHtml = Array.from({ length: totalSlides }, (_, i) => {
-        const isActive = i === 0 ? 'active' : '';
-        const inner = imgs[i]
-          ? `<img src="${encodeURI(imgs[i])}" alt="Vue ${i + 1}">`
-          : `<div class="card-placeholder" style="width:100%;height:100%;"></div>`;
-        return `<div class="gallery-thumb ${isActive}" data-index="${i}">${inner}</div>`;
-      }).join('');
-
-      const arrowsHtml = imgs.length > 1 ? `
-        <button class="gallery-prev" aria-label="Photo précédente">&#8592;</button>
-        <button class="gallery-next" aria-label="Photo suivante">&#8594;</button>` : '';
-
-      const mainInner = mainSrc
-        ? `<img src="${mainSrc}" alt="${project.title}" id="gallery-main-img">${arrowsHtml}`
-        : `<div class="card-placeholder" style="width:100%;height:100%;"></div>`;
-
-      // Build info rows
       const rows = [
-        project.mission   && { label: 'Mission',          value: project.mission },
-        project.mo        && { label: 'Maîtrise d\'ouvrage', value: project.mo },
-        project.location  && { label: 'Localisation',     value: project.location },
-        project.year      && { label: 'Année',             value: project.year },
-        project.budget    && { label: 'Budget',            value: project.budget },
-        project.partners  && { label: 'Partenaires',       value: project.partners },
-      ].filter(Boolean);
-
-      const rowsHtml = rows.map(r =>
-        `<div class="info-row"><span class="info-label">${r.label}</span><span class="info-value">${r.value}</span></div>`
+        ['Mission', p.mission],
+        ['Maîtrise d\'ouvrage', p.mo],
+        ['Localisation', p.location],
+        ['Année', p.year],
+        ['Budget', p.budget],
+        ['Partenaires', p.partners]
+      ].filter(r => r[1]).map(r =>
+        `<div class="info-row"><span class="info-label">${r[0]}</span><span class="info-value">${r[1]}</span></div>`
       ).join('');
 
-      main.innerHTML = `
-        <div class="detail-header fade-in">
-          <a href="projets.html" class="back-link">Retour aux projets</a>
-          <div style="margin-bottom:1rem;"><span class="badge badge--${cc}">${catLabel}</span></div>
-          <h1 class="detail-title">${project.title}</h1>
-          ${project.location ? `<p class="detail-location">${project.location}</p>` : ''}
-        </div>
+      const links = (p.links && p.links.length)
+        ? `<div class="info-links"><span class="info-label">Plus d'informations</span>
+             <div class="info-links-list">${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('')}</div>
+           </div>`
+        : '';
 
-        <div class="detail-body fade-in">
+      root.innerHTML = `
+        <a href="projets.html?cat=${p.category}" class="back-link">${c.label}</a>
+        <header class="detail-head">
+          <span class="badge badge--${c.cssClass}">${c.label}</span>
+          <h1 class="detail-title">${p.title}</h1>
+          ${p.location ? `<p class="detail-loc">${p.location}</p>` : ''}
+        </header>
+
+        <div class="detail-grid">
           <div class="gallery">
             <div class="gallery-main">${mainInner}</div>
-            ${totalSlides > 1 ? `<div class="gallery-thumbs">${thumbsHtml}</div>` : ''}
+            ${thumbs ? `<div class="gallery-thumbs">${thumbs}</div>` : ''}
           </div>
-
-          <div class="detail-info">
-            ${project.description ? `<p class="info-description">${project.description}</p>` : ''}
-            ${rows.length > 0 ? `<div class="info-table">${rowsHtml}</div>` : ''}
-          </div>
+          <aside class="detail-info">
+            ${p.description ? `<p class="info-desc">${p.description}</p>` : ''}
+            ${rows ? `<div class="info-table">${rows}</div>` : ''}
+            ${links}
+          </aside>
         </div>`;
 
-      // Gallery interaction (thumbnails + arrows)
+      /* Galerie */
       if (imgs.length > 1) {
-        let currentIndex = 0;
-        const mainImg = document.getElementById('gallery-main-img');
-        const thumbs  = document.querySelectorAll('.gallery-thumb');
-
-        function goTo(idx) {
-          currentIndex = (idx + imgs.length) % imgs.length;
-          mainImg.src = encodeURI(imgs[currentIndex]);
-          thumbs.forEach(t => t.classList.remove('active'));
-          thumbs[currentIndex].classList.add('active');
+        let cur = 0;
+        const main = document.getElementById('gmain');
+        const tbs = [...root.querySelectorAll('.g-thumb')];
+        function go(i) {
+          cur = (i + imgs.length) % imgs.length;
+          main.src = encodeURI(imgs[cur]);
+          tbs.forEach(t => t.classList.toggle('active', +t.dataset.i === cur));
         }
-
-        thumbs.forEach(thumb => {
-          thumb.addEventListener('click', () => goTo(parseInt(thumb.dataset.index, 10)));
-        });
-
-        document.querySelector('.gallery-prev').addEventListener('click', () => goTo(currentIndex - 1));
-        document.querySelector('.gallery-next').addEventListener('click', () => goTo(currentIndex + 1));
-
+        tbs.forEach(t => t.addEventListener('click', () => go(+t.dataset.i)));
+        root.querySelector('.g-prev').addEventListener('click', () => go(cur - 1));
+        root.querySelector('.g-next').addEventListener('click', () => go(cur + 1));
         document.addEventListener('keydown', e => {
-          if (e.key === 'ArrowLeft')  goTo(currentIndex - 1);
-          if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+          if (e.key === 'ArrowLeft') go(cur - 1);
+          if (e.key === 'ArrowRight') go(cur + 1);
         });
       }
-    }
+    })();
   </script>
 </body>
 </html>
