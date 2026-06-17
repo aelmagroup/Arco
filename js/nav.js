@@ -50,13 +50,8 @@
       </a>
       <nav class="side-nav" aria-label="Navigation principale">
         ${catLinks}
-        <div class="side-item side-item--about ${aboutActive}">
+        <div class="side-item ${aboutActive}">
           <a href="apropos.html" class="side-link">À propos</a>
-          <div class="side-subnav">
-            <a href="apropos.html#equipe">L'équipe</a>
-            <a href="apropos.html#prix">Prix &amp; distinctions</a>
-            <a href="apropos.html#publications">Publications</a>
-          </div>
         </div>
       </nav>`;
   }
